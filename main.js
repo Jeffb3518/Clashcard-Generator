@@ -26,13 +26,20 @@ inquier.prompt([
     }
 ]).then(handleUserResponse);
 
+//Array for my flascards
+var Basic = [];
+var Cloze = [];
+
 function handleUserResponse(response){
 
     var newResponse = new Basic(response.question, response.answer);
     newResponse.showQuestion();
     response.push(newResponse);
 
-    var newClozeResponse = new Cloze(answer.text, answer.clozeAnswer);
+    var newClozeResponse = new Cloze(response.text, response.clozeAnswer);
     newClozeResponse.showQuestion();
     response.push(newClozeResponse);
+
+fs.appendFile("flashcards.txt", response.question + " " + response.answer + "/n");
+fs.appendFile("flashcards.txt", response.text + " " + response.clozeAnswer + "/n");
 }
