@@ -4,6 +4,11 @@ var fs = require ('fs');
 var basicflashcard = require("./basicflashcard");
 var clozeflashcard = require("./clozeflashcard");
 
+//Array for my flascards
+var Basic = [];
+var Cloze = [];
+
+//Array for user responses
 var response = [];
 
 inquier.prompt([
@@ -26,9 +31,7 @@ inquier.prompt([
     }
 ]).then(handleUserResponse);
 
-//Array for my flascards
-var Basic = [];
-var Cloze = [];
+
 
 function handleUserResponse(response){
 
@@ -40,6 +43,7 @@ function handleUserResponse(response){
     newClozeResponse.showQuestion();
     response.push(newClozeResponse);
 
+//Log responses to txt file
 fs.appendFile("flashcards.txt", response.question + " " + response.answer + "/n");
 fs.appendFile("flashcards.txt", response.text + " " + response.clozeAnswer + "/n");
-}
+};
