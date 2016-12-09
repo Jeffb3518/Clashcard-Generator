@@ -1,7 +1,27 @@
-var basicFront = process.argv[2];
+var inquier = require("inquier");
+var fs = require ('fs');
 
-var basicBack = process.argv[3];
+var basicflashcard = require("./basicflashcard");
+var clozeflashcard = require("./clozeflashcard");
 
-var text = process.argv[4];
+var capitals = [];
 
-var cloze = process.argv[5];
+inquier.prompt([
+    {
+        name: "question",
+        message: "Question is: ",
+        type: "input"
+    }, {
+        name: "answer",
+        message: "Answer is: ",
+        type: "input"
+    }, {
+        name: "clozequestion",
+        message: "Enter Cloze",
+        type: "input"
+    }, {
+        name: "answertext",
+        message: "Enter Text",
+        type: "input"
+    }
+]).then(handleUserResponse);
