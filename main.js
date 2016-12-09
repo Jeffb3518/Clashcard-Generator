@@ -4,7 +4,7 @@ var fs = require ('fs');
 var basicflashcard = require("./basicflashcard");
 var clozeflashcard = require("./clozeflashcard");
 
-var capitals = [];
+var response = [];
 
 inquier.prompt([
     {
@@ -17,11 +17,22 @@ inquier.prompt([
         type: "input"
     }, {
         name: "clozequestion",
-        message: "Enter Cloze",
+        message: "Question is: ",
         type: "input"
     }, {
-        name: "answertext",
-        message: "Enter Text",
+        name: "clozetext",
+        message: "Cloze",
         type: "input"
     }
 ]).then(handleUserResponse);
+
+function handleUserResponse(response){
+
+    var newResponse = new Basic(response.question, response.answer);
+    newResponse.showQuestion();
+    response.push(newResponse);
+
+    var newClozeResponse = new Cloze(answer.text, answer.clozeAnswer);
+    newClozeResponse.showQuestion();
+    response.push(newClozeResponse);
+}

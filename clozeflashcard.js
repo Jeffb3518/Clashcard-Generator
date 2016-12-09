@@ -1,39 +1,39 @@
 var Cloze = function(){
-    this.front = front;
-    this.back = back;
+    this.text = text;
+    this.clozeAnswer = cloze;
 }
 
 var question1 = new Cloze()
 
-question1.front = "Columbus?";
-question1.back = "is the Capital of Ohio";
+question1.clozeAnswer = "Columbus?";
+question1.text = "is the Capital of Ohio";
 this.showQuestion = function(){
-    console.log(this.back);
+    console.log(this.text);
 }
 this.showAnswer = function(){
-    console.log(this.front);
+    console.log(this.clozeAnswer);
 }
 
 var question2 = new Cloze()
 
-question2.front = "Atlanta";
-question2.back = "is the Capital of Georgia";
+question2.clozeAnswer = "Atlanta";
+question2.text = "is the Capital of Georgia";
 this.showQuestion = function(){
-    console.log(this.back);
+    console.log(this.text);
 }
 this.showAnswer = function(){
-    console.log(this.front);
+    console.log(this.clozeAnswer);
 }
 
 var question3 = new Cloze()
 
-question3.front = "Nashville"
-question3.back = "is the capital of Tennessee"
+question3.clozeAnswer = "Nashville"
+question3.text = "is the capital of Tennessee"
 this.showQuestion = function(){
-    console.log(this.back);
+    console.log(this.text);
 }
 this.showAnswer = function(){
-    console.log(this.front);
+    console.log(this.clozeAnswer);
 };
 
 module.exports = Cloze;
