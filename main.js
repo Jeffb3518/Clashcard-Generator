@@ -26,7 +26,7 @@ inquier.prompt([
         type: "input"
     }, {
         name: "clozetext",
-        message: "Cloze",
+        message: "Cloze is: ",
         type: "input"
     }
 ]).then(handleUserResponse);
