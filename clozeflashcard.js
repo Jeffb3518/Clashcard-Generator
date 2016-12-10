@@ -5,7 +5,7 @@ var Cloze = function(){
 
 var question1 = new Cloze()
 
-question1.clozeAnswer = "Columbus?";
+question1.clozeAnswer = "Columbus";
 question1.text = "is the Capital of Ohio";
 this.showQuestion = function(){
     console.log(this.text);
